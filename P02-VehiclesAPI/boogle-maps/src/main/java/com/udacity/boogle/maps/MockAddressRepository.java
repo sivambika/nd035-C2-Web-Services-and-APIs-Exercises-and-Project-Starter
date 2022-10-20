@@ -28,7 +28,8 @@ class MockAddressRepository {
         String[] cityStateAndZipParts = cityStateAndZip.trim().split(" ");
 
         LinkedList<String> list =
-                Arrays.stream(cityStateAndZipParts).map(String::trim)
+                Arrays.stream(cityStateAndZipParts)
+                        .map(String::trim)
                         .collect(Collectors.toCollection(LinkedList::new));
 
         String zip = list.pollLast();
